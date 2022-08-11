@@ -25,5 +25,5 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("com.github.plplmax.monitoring.MainKt")
 }
