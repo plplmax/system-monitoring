@@ -30,6 +30,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("io.prometheus:simpleclient:0.16.0")
     implementation("io.prometheus:simpleclient_pushgateway:0.16.0")
+    implementation("com.github.oshi:oshi-core-java11:6.2.2")
+    implementation("org.slf4j:slf4j-simple:1.7.36")
     testImplementation(kotlin("test"))
 }
 
