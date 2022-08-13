@@ -27,6 +27,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("io.prometheus:simpleclient:0.16.0")
     implementation("io.prometheus:simpleclient_pushgateway:0.16.0")
     testImplementation(kotlin("test"))
