@@ -7,6 +7,11 @@ services:
       - prometheus-data:/prometheus
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
+  pushgateway:
+    image: prom/pushgateway:v1.4.3
+    ports:
+      - 9091:9091
+
   grafana:
     image: grafana/grafana:9.0.7
     ports:

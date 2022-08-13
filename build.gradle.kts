@@ -27,6 +27,7 @@ repositories {
 }
 
 dependencies {
+    implementation("io.prometheus:simpleclient_pushgateway:0.16.0")
     testImplementation(kotlin("test"))
 }
 
