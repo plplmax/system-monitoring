@@ -492,7 +492,7 @@
           "query": "label_values(cpu)",
           "refId": "StandardVariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -521,6 +521,6 @@
   "timezone": "",
   "title": "Monitoring",
   "uid": "hGQhvDmVk",
-  "version": 30,
+  "version": 31,
   "weekStart": ""
 }
