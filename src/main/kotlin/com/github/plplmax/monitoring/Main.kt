@@ -24,6 +24,12 @@ fun main() {
             registry = registry
         )
 
+        Bios(
+            motherboard = systemInfo.hardware.computerSystem.baseboard,
+            firmware = systemInfo.hardware.computerSystem.firmware,
+            registry = registry
+        )
+
         val jobName = "metrics"
         val refreshJob = launch(Dispatchers.IO + job) {
             repeat(Int.MAX_VALUE) {
