@@ -14,10 +14,11 @@ class AppOf(
     private val gateway: PushGateway = PushGateway("127.0.0.1:9091"),
     private val registry: CollectorRegistry = CollectorRegistry.defaultRegistry
 ) : App {
+    private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     private var refreshJob: Job? = null
 
-    override fun start(scope: CoroutineScope, job: Job) {
-        refreshJob = scope.launch(Dispatchers.IO + job) {
+    override fun start(job: Job) {
+        refreshJob = scope.launch(job) {
             val cpu = Cpu(
                 processor = info.hardware.processor,
                 sensors = info.hardware.sensors,
