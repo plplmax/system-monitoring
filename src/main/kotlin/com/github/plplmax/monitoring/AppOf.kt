@@ -1,5 +1,7 @@
 package com.github.plplmax.monitoring
 
+import com.github.plplmax.monitoring.cpu.Cpu
+import com.github.plplmax.monitoring.motherboard.Motherboard
 import io.prometheus.client.CollectorRegistry
 import io.prometheus.client.exporter.PushGateway
 import kotlinx.coroutines.CoroutineScope
@@ -25,8 +27,8 @@ class AppOf(
                 registry = registry
             )
 
-            Bios(
-                motherboard = info.hardware.computerSystem.baseboard,
+            Motherboard(
+                board = info.hardware.computerSystem.baseboard,
                 firmware = info.hardware.computerSystem.firmware,
                 registry = registry
             )

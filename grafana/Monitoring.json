@@ -518,7 +518,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "machine_bios_name_total{motherboard=\"$motherboard\"}",
+          "expr": "machine_motherboard_name_total{motherboard=\"$motherboard\"}",
           "range": true,
           "refId": "A"
         }
@@ -695,6 +695,6 @@
   "timezone": "",
   "title": "Monitoring",
   "uid": "hGQhvDmVk",
-  "version": 34,
+  "version": 35,
   "weekStart": ""
 }
