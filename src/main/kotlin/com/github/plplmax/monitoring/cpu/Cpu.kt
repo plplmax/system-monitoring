@@ -3,7 +3,6 @@ package com.github.plplmax.monitoring.cpu
 import io.prometheus.client.CollectorRegistry
 import io.prometheus.client.Counter
 import io.prometheus.client.Gauge
-import kotlinx.coroutines.delay
 import oshi.hardware.CentralProcessor
 import oshi.hardware.Sensors
 import oshi.util.FormatUtil
@@ -33,13 +32,11 @@ class Cpu(
         }
     }
 
-    suspend fun refresh() {
+    fun refresh() {
         val cpuLoadingInPercents = (processor.getSystemCpuLoad(ONE_SECOND_IN_MILLIS) * 100).roundToInt()
 
         loading.labels(name).set(cpuLoadingInPercents.toDouble())
         temperature.labels(name).set(sensors.cpuTemperature)
-
-        delay(100)
     }
 
     companion object {
