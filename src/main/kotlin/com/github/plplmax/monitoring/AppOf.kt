@@ -1,6 +1,7 @@
 package com.github.plplmax.monitoring
 
 import com.github.plplmax.monitoring.cpu.Cpu
+import com.github.plplmax.monitoring.memory.Memory
 import com.github.plplmax.monitoring.motherboard.Motherboard
 import io.prometheus.client.CollectorRegistry
 import io.prometheus.client.exporter.PushGateway
@@ -36,8 +37,14 @@ class AppOf(
                 registry = registry
             )
 
+            val memory = Memory(
+                memory = info.hardware.memory,
+                registry = registry
+            )
+
             while (isActive) {
                 cpu.refresh()
+                memory.refresh()
                 gateway.pushAdd(registry, JOB_NAME)
             }
         }
